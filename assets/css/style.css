@@ -10,12 +10,38 @@ body {
 }
 
 /*apply styles to <header>*/
+
+header nav ul li a:hover {
+  background: #fce138;
+  color: #024e76;
+  border-radius: 15px;
+  text-shadow: none;
+}
+
+.hero-form button:hover {
+  background-color: #39a6b2;  
+}
+
+.contact-form button:hover {
+  color: #fce138;
+  background: #39a6b2;
+}
+
 header {
     padding: 20px 35px;
     background-color: #39a6b2;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url("../images/flipped-hero-image.jpg");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+background-position: 80%;
+
 }
 
 header h1 {
@@ -28,7 +54,7 @@ header h1 {
 header a {
     color: #fce138;
     text-decoration: none;
-    c
+    margin-right: 15px;
 }
 
 header nav {
@@ -82,7 +108,18 @@ footer a{
 section {
     padding: 60px;
 }
+header h1 {
+  /* add alongside your existing declarations */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
+header nav ul li a {
+  /* and here */
+}
+
+.hero-cta h2 {
+  /* and here */
+}
 
   /* Hero Style Start */
 .hero {
@@ -93,7 +130,9 @@ section {
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
-
+    background-attachment: fixed;
+    background-position: 80%;
+    
 
   }
 
@@ -117,11 +156,14 @@ section {
 
   .hero-form {
     border: 3px solid #024e76;
-    background-color: #fce138;
+    background-color:  rgba(252, 225, 56, 0.80);
     padding: 20px;
     color: #024e76;
     width: 40%;
     margin: 3.5%;
+    border-radius: 15px;
+    box-shadow: rgba(252, 225, 56, 0.8);
+
   }
 
   .hero-form p {
@@ -158,6 +200,27 @@ section {
     padding: 10px 20px;
     font-size: 16px;
   }
+
+
+  .form-input {
+  border-radius: 10px;
+  }
+  
+  .hero-form button {
+    border-radius: 10px;
+  }
+  
+  .contact-form input, .contact-form textarea {
+    border-radius: 10px;
+  }
+  
+  .contact-form button {
+    border-radius: 10px;
+  }
+
+  
+
+
   /* HERO STYLES END */
 
 
@@ -178,13 +241,15 @@ section {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #39a6b2;
   }
-
+  .step:last-child {
+    border-bottom: none;
+  }
   .section-title {
     font-size: 48px;
     color: #024e76;
@@ -288,6 +353,41 @@ section {
   display: flex;
 }
 
+/* update existing rule with this declaration */
+.hero-form input {
+  background-color: rgba(255,255,255, 0.75);
+}
+
+/* create a new rule for focus state */
+.hero-form input:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
+
+}
+
+/* update existing rule with this declaration */
+.contact-form input {
+  background-color: rgba(255,255,255, 0.75);
+}
+
+/* create a new rule for focus state */
+.contact-form input:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
+
+}
+
+/* update existing rule with this declaration */
+.contact-form textarea {
+  background-color: rgba(255,255,255, 0.75);
+}
+
+/* create a new rule for focus state */
+.contact-form textarea:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
+
+}
   /* REACH OUT STYLES START */
 
   .contact-form input, .contact-form textarea{
@@ -321,18 +421,19 @@ section {
   }
 
   .contact-info {
-display: flex;
-justify-content: space-between;
-flex-wrap: flex;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: flex;
 }
 
 .contact-info > * {
-flex: 1;
+flex: 1 100%;
 margin: 15px;
   }
 
   .contact-info iframe {
     height: 400px;
+    flex: 1 100%;
   }
 
   .contact-info div {
@@ -373,6 +474,7 @@ margin: 15px;
   header {
     padding-bottom: 0;
     justify-content: center;
+    position: relative
   }
 
   header h1 {
